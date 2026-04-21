@@ -1,0 +1,114 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+  border-color: var(--border-green);
+}
+
+.featured {
+  border-color: var(--border-green);
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(126, 217, 87, 0.04) 100%);
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.thumbnail {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.typeBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(15, 15, 15, 0.85);
+  color: var(--primary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  flex: 1;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.55;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.metaItem svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}

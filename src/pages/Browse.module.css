@@ -1,0 +1,170 @@
+.pageHeader {
+  padding: 32px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .pageHeader {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pageCount {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchWrap {
+  width: 220px;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.filterBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+@media (min-width: 1024px) {
+  .filterBtn {
+    display: none;
+  }
+}
+
+.filterBadge {
+  background: var(--primary);
+  color: #0f0f0f;
+  font-size: 10px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding-bottom: 60px;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+.sidebar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    display: block;
+  }
+}
+
+.content {
+  min-width: 0;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.emptyIcon {
+  width: 64px;
+  height: 64px;
+  background: var(--surface-2);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.emptyTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.emptyText {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.skeleton {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.skeletonImg {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(90deg, var(--surface-2) 25%, var(--surface-3) 50%, var(--surface-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonBody {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeletonLine {
+  height: 12px;
+  background: linear-gradient(90deg, var(--surface-2) 25%, var(--surface-3) 50%, var(--surface-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

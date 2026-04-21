@@ -1,0 +1,130 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.dialog {
+  background: #161616;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 28px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+}
+
+.iconWrap {
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 179, 71, 0.12);
+  border: 1px solid rgba(255, 179, 71, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFB347;
+  margin-bottom: 4px;
+}
+
+.iconWrap.danger {
+  background: rgba(255, 92, 92, 0.12);
+  border-color: rgba(255, 92, 92, 0.3);
+  color: #FF5C5C;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #F2F2F2;
+}
+
+.message {
+  font-size: 13px;
+  color: #999;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.cancelBtn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #C8C8C8;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.cancelBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.09);
+  color: #F2F2F2;
+}
+
+.confirmBtn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  background: #7ED957;
+  border: none;
+  color: #0a0a0a;
+  transition: all 0.15s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmBtn:hover:not(:disabled) {
+  background: #8fe462;
+}
+
+.dangerBtn {
+  background: #FF5C5C;
+  color: #fff;
+}
+
+.dangerBtn:hover:not(:disabled) {
+  background: #ff7070;
+}
+
+.confirmBtn:disabled, .cancelBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

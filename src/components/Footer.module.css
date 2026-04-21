@@ -1,0 +1,145 @@
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: auto;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .inner {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logoText {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.tagline {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.copy p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.author {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Developer Card */
+.devCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .devCard {
+    align-items: flex-start;
+  }
+}
+
+.devLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+
+.devName {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.devSub {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.devSocials {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.devSocialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  color: var(--muted);
+  background: var(--border);
+  border: 1px solid var(--border);
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  text-decoration: none;
+}
+
+.devSocialLink:hover {
+  color: var(--primary);
+  background: var(--primary-glow);
+  border-color: var(--border-green);
+}

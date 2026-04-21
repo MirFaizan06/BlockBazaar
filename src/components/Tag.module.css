@@ -1,0 +1,57 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: #D0D0D0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-xs);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all var(--transition-fast);
+}
+
+[data-theme="light"] .tag {
+  background: rgba(255, 255, 255, 0.60);
+  color: #2a2a2a;
+  border-color: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(4px);
+}
+
+[data-theme="light"] .clickable:hover {
+  border-color: #3a8a1a;
+  color: #3a8a1a;
+  background: rgba(60, 138, 26, 0.12);
+}
+
+[data-theme="light"] .active {
+  background: rgba(60, 138, 26, 0.14);
+  border-color: rgba(60, 138, 26, 0.5);
+  color: #3a8a1a;
+}
+
+.sm {
+  padding: 2px 6px;
+  font-size: 10px;
+}
+
+.md {
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  border-color: #7ED957;
+  color: #7ED957;
+  background: rgba(126, 217, 87, 0.14);
+}
+
+.active {
+  background: rgba(126, 217, 87, 0.16);
+  border-color: rgba(126, 217, 87, 0.5);
+  color: #7ED957;
+}

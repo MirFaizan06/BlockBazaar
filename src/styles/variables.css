@@ -1,0 +1,72 @@
+:root {
+  --bg: #0a0a0a;
+  --surface: #131313;
+  --surface-2: #1c1c1c;
+  --surface-3: #262626;
+  --surface-hover: #1f1f1f;
+  --primary: #7ED957;
+  --primary-dark: #4CAF26;
+  --primary-dim: #5ea83d;
+  --primary-glow: rgba(126, 217, 87, 0.14);
+  --primary-glow-strong: rgba(126, 217, 87, 0.28);
+  --text: #F2F2F2;
+  --text-secondary: #C8C8C8;
+  --muted: #868686;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-green: rgba(126, 217, 87, 0.18);
+  --border-strong: rgba(126, 217, 87, 0.32);
+  --error: #FF5C5C;
+  --warning: #FFB347;
+
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 24px rgba(126, 217, 87, 0.18);
+  --shadow-glow-strong: 0 0 40px rgba(126, 217, 87, 0.32);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+
+  --navbar-height: 64px;
+
+  --transition-fast: 140ms ease;
+  --transition: 200ms ease;
+  --transition-slow: 320ms ease;
+
+  --z-navbar: 100;
+  --z-modal: 200;
+  --z-drawer: 150;
+}
+
+[data-theme="light"] {
+  --bg: #F7F7F7;
+  --surface: #FFFFFF;
+  --surface-2: #F0F0F0;
+  --surface-3: #E8E8E8;
+  --surface-hover: #EBEBEB;
+  --primary: #5aaa2e;
+  --primary-dark: #3d8020;
+  --primary-dim: #4a8f25;
+  --primary-glow: rgba(126, 217, 87, 0.14);
+  --primary-glow-strong: rgba(126, 217, 87, 0.28);
+  --text: #0f0f0f;
+  --text-secondary: #333333;
+  --muted: #777777;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-green: rgba(80, 160, 40, 0.22);
+  --border-strong: rgba(80, 160, 40, 0.40);
+
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.18);
+  --shadow-glow: 0 0 24px rgba(90, 170, 46, 0.18);
+  --shadow-glow-strong: 0 0 40px rgba(90, 170, 46, 0.28);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}

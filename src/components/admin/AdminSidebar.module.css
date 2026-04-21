@@ -1,0 +1,128 @@
+.sidebar {
+  width: 220px;
+  height: 100%;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brandIcon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary-glow);
+  border: 1px solid var(--border-green);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.brandTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.brandSub {
+  font-size: 10px;
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+
+.nav {
+  flex: 1;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.link:hover {
+  background: var(--border);
+  color: var(--text-secondary);
+}
+
+.active {
+  background: var(--primary-glow) !important;
+  color: var(--primary) !important;
+  font-weight: 600;
+}
+
+.footer {
+  padding: 12px 10px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.themeBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all 0.15s;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.themeBtn:hover {
+  background: var(--primary-glow);
+  color: var(--primary);
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all 0.15s;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.logout:hover {
+  background: rgba(255, 92, 92, 0.08);
+  color: var(--error);
+}

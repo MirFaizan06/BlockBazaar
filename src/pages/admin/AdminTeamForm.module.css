@@ -1,0 +1,242 @@
+.page {
+  max-width: 760px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--border);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.backBtn:hover {
+  color: var(--text-secondary);
+  background: var(--surface-2);
+}
+
+.pageTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 20px 24px;
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sectionHint {
+  font-size: 12px;
+  color: var(--muted);
+  margin: -10px 0 16px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 560px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.req {
+  color: var(--error);
+}
+
+.input {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.input:focus {
+  border-color: var(--border-strong);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.inputError {
+  border-color: rgba(255, 92, 92, 0.5) !important;
+}
+
+.fieldError {
+  font-size: 11px;
+  color: var(--error);
+  opacity: 0.9;
+}
+
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 8px;
+  padding-bottom: 40px;
+}
+
+.cancelBtn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--border);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cancelBtn:hover:not(:disabled) {
+  color: var(--text-secondary);
+  background: var(--surface-2);
+}
+
+.cancelBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.saveBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--bg);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px var(--primary-glow-strong);
+}
+
+.saveBtn:hover:not(:disabled) {
+  filter: brightness(1.08);
+  box-shadow: 0 6px 18px var(--primary-glow-strong);
+  transform: translateY(-1px);
+}
+
+.saveBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spin {
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fetchingWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 60px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0;
+  }
+
+  .section {
+    padding: 16px 14px 18px;
+    border-radius: 10px;
+  }
+
+  .formFooter {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
