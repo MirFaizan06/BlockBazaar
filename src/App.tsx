@@ -12,6 +12,7 @@ import Browse from './pages/Browse';
 import ModDetail from './pages/ModDetail';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import NotFound from './pages/NotFound';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminLayout from './components/admin/AdminLayout';
 import Team from './pages/Team';
@@ -36,6 +37,7 @@ function AnimatedRoutes() {
         </Route>
 
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="*" element={<NotFound />} />
 
         <Route
           path="/admin"

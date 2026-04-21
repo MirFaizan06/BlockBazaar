@@ -243,6 +243,31 @@
   100% { background-position: 200% 0; }
 }
 
+.emptySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 20px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--muted);
+}
+
+.emptySection p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.emptySection a {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
 @media (max-width: 640px) {
   .hero {
     background-position: center 40%;

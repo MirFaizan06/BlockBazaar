@@ -1,0 +1,108 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(ellipse at 50% 0%, var(--primary-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 480px;
+}
+
+.code {
+  font-family: var(--font-pixel);
+  font-size: clamp(56px, 14vw, 96px);
+  color: var(--primary);
+  line-height: 1;
+  text-shadow:
+    0 0 30px rgba(126, 217, 87, 0.5),
+    0 0 60px rgba(126, 217, 87, 0.2);
+  letter-spacing: 0.06em;
+}
+
+.title {
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 360px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #0a0a0a;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.15s;
+  box-shadow: 0 4px 16px var(--primary-glow-strong);
+}
+
+.primaryBtn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px var(--primary-glow-strong);
+}
+
+.secondaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.secondaryBtn:hover {
+  border-color: var(--border-green);
+  color: var(--primary);
+  background: var(--primary-glow);
+}

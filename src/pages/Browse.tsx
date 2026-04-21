@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { SlidersHorizontal, X } from 'lucide-react';
+import { SlidersHorizontal, X, Package } from 'lucide-react';
 import ModCard from '../components/ModCard';
 import FilterSidebar from '../components/FilterSidebar';
 import SearchBar from '../components/SearchBar';
@@ -78,6 +78,14 @@ export default function Browse() {
               <GridLayout cols={3}>
                 {[...Array(9)].map((_, i) => <SkeletonCard key={i} />)}
               </GridLayout>
+            ) : mods.length === 0 ? (
+              <div className={styles.empty}>
+                <div className={styles.emptyIcon}>
+                  <Package size={36} />
+                </div>
+                <h3 className={styles.emptyTitle}>No mods yet</h3>
+                <p className={styles.emptyText}>The marketplace is empty — mods are added via the admin panel.</p>
+              </div>
             ) : filtered.length === 0 ? (
               <div className={styles.empty}>
                 <div className={styles.emptyIcon}>

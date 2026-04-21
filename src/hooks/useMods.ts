@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { Mod } from '../types';
 import { getAllMods, getModBySlug } from '../services/modService';
-import { MOCK_MODS } from '../utils/mockData';
 
 interface UseModsResult {
   mods: Mod[];
@@ -20,9 +19,10 @@ export function useMods(): UseModsResult {
     setError(null);
     try {
       const data = await getAllMods();
-      setMods(data.length > 0 ? data : MOCK_MODS);
-    } catch {
-      setMods(MOCK_MODS);
+      setMods(data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load mods');
+      setMods([]);
     } finally {
       setLoading(false);
     }
@@ -52,17 +52,11 @@ export function useMod(slug: string): UseModResult {
       setError(null);
       try {
         const data = await getModBySlug(slug);
-        if (data) {
-          setMod(data);
-        } else {
-          const mockMod = MOCK_MODS.find(m => m.slug === slug) ?? null;
-          setMod(mockMod);
-          if (!mockMod) setError('Mod not found');
-        }
+        setMod(data);
+        if (!data) setError('Mod not found');
       } catch {
-        const mockMod = MOCK_MODS.find(m => m.slug === slug) ?? null;
-        setMod(mockMod);
-        if (!mockMod) setError('Mod not found');
+        setMod(null);
+        setError('Failed to load mod');
       } finally {
         setLoading(false);
       }

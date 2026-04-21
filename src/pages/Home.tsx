@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
+import { Package } from 'lucide-react';
 import SearchBar from '../components/SearchBar';
 import ModCard from '../components/ModCard';
 import SectionWrapper from '../components/SectionWrapper';
@@ -118,6 +119,8 @@ export default function Home() {
             <GridLayout cols={3}>
               {[...Array(3)].map((_, i) => <SkeletonCard key={i} />)}
             </GridLayout>
+          ) : featured.length === 0 ? (
+            <EmptySection message="No mods yet — check back soon." />
           ) : (
             <GridLayout cols={3}>
               {featured.map(mod => <ModCard key={mod.id} mod={mod} featured />)}
@@ -130,6 +133,8 @@ export default function Home() {
             <GridLayout cols={4}>
               {[...Array(8)].map((_, i) => <SkeletonCard key={i} />)}
             </GridLayout>
+          ) : latest.length === 0 ? (
+            <EmptySection message="No mods yet — check back soon." />
           ) : (
             <GridLayout cols={4}>
               {latest.map(mod => <ModCard key={mod.id} mod={mod} />)}
@@ -137,14 +142,8 @@ export default function Home() {
           )}
         </SectionWrapper>
 
-        <SectionWrapper title="Trending">
-          {loading ? (
-            <div className={styles.trendingScroll}>
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className={styles.trendingItem}><SkeletonCard /></div>
-              ))}
-            </div>
-          ) : (
+        {!loading && trending.length > 0 && (
+          <SectionWrapper title="Trending">
             <div className={styles.trendingScroll}>
               {trending.map(mod => (
                 <div key={mod.id} className={styles.trendingItem}>
@@ -152,10 +151,20 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          )}
-        </SectionWrapper>
+          </SectionWrapper>
+        )}
       </div>
     </motion.div>
+  );
+}
+
+function EmptySection({ message }: { message: string }) {
+  return (
+    <div className={styles.emptySection}>
+      <Package size={32} />
+      <p>{message}</p>
+      <Link to="/admin/mods/new">Add mods via admin panel</Link>
+    </div>
   );
 }
 
